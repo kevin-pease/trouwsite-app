@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<div class="message">
+    <div class="form-container">
+        <h3>
+          Registratie
+        </h3>
+        <p>
+            Vul hieronder je gegevens in om je te registreren, je wordt daarna automatisch ingelogd. Eenmaal ingelogd kun je je verdere voorkeuren en wensen doorgeven.
+        </p>
+        <form action="/register" method="post">
+        {{ registerform.csrf_token }}
+          {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            {% for message in messages %}
+              <span class="error">{{ message }}</span>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+        <label class="form vert">
+            {{ registerform.name.label }}
+            {{ registerform.name}}
+        </label>
+        <label class="form vert">
+            {{ registerform.email.label }}
+            {{ registerform.email}}
+        </label>
+        <label class="form vert">
+            {{ registerform.password.label }}
+            {{ registerform.password}}
+        </label>
+        <label class="form vert">
+            {{ registerform.password_check.label }}
+            {{ registerform.password_check}}
+        </label>
+        {{ registerform.submit}}
+    </form>
+    </div>
+</div>
+
+{% endblock %}

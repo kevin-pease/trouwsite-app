@@ -1,0 +1,352 @@
+@font-face {
+    font-family: Another-typewriter;
+    src: url('atwriter.ttf'); 
+}
+  
+@font-face {
+    font-family: Hello;
+    src: url('hello.ttf'); 
+}
+
+/* Overrides */
+body {
+    display: flex;
+    margin: 0;
+    margin-top: 100px;
+    justify-content: center;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("bg.png");
+    background-repeat: repeat;
+    background-color: rgba(91, 245, 168, 0.2);
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    font-family: Hello;
+    font-size: 2.5em;
+}
+
+h2 {
+    font-size:1.5em;
+    color: white;   
+}
+
+h3 {
+    font-size:1.5em;
+}
+
+h4 {
+    font-size: 1.2em;
+}
+
+a {
+    font-size: 0.7em;
+    color: darkgrey;
+}
+
+a.logout {
+    display: flex;
+    font-family: Another-typewriter;
+    align-self: center;
+    font-size:1em;
+    padding-left: 15px;
+    padding-bottom: 10px;
+}
+
+a.stats {
+    color: indianred;
+    font-size: 1em;
+}
+
+input {
+    font-family: Another-typewriter;
+    font-size:1em;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+textarea:focus,
+input:focus {
+    outline:5px solid rgba(91, 245, 168, 0.2)
+}
+
+textarea {
+    display: flex;
+    flex: 1 0 auto;
+    font-family: Another-typewriter;
+    color: darkslategrey;
+    font-size:1em;
+    width: 100%;
+    height: 150px;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    resize: none;
+    overflow: auto;
+    margin-top: 10px;
+}
+
+input[type=text] {
+    color: darkslategrey;
+    width: 100%;
+}
+
+input[type=submit] {
+    width: 150px;
+    color: white;
+    background-color:indianred;
+    margin-top: 50px;
+}
+
+input[type=checkbox] {
+    margin-right: 15px;
+    height: 20px;
+    width: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    padding-right: 15px;
+    align-self: stretch;
+}
+
+iframe {
+    width: 300px;
+    height: 250px;
+    border: dotted lightgray;
+}
+
+
+/* Table */
+table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    overflow: hidden;
+}
+
+table.planning {
+    table-layout: auto;
+}
+
+tr {
+    border-bottom: 2px dotted darkslategray;
+}
+  
+th {
+    background-color: rgba(19, 75, 47, 0.4);
+    color: #fff;
+    white-space: nowrap;
+}
+  
+th,
+td {
+    text-align: left;
+    padding: 0.5em 1em;
+}
+
+td.parking {
+    font-size: 1.3em;
+}
+  
+  
+/* Elements */
+div.header {
+    display: flex;
+    background-size: auto;
+    background-image: url('header.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 400px;
+    margin-bottom: 25px;
+    flex: 1 0 auto;
+}
+
+div.greeting {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.bottom {
+    display: flex;
+    background-size:auto;
+    background-image: url('footer.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 320px;
+    flex: 1 0 auto;
+}
+
+label.form {
+    display: flex;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+label.form.horiz {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: baseline;
+}
+
+label.form.vert {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    align-content: stretch;
+    align-self: stretch;
+}
+
+label.form.vert.submit {
+    justify-content: flex-end;
+}
+
+div.navbutton {
+    display: flex;
+    font-family: Another-typewriter;
+    font-size:1em;
+    border-radius: 20px;
+    background-color: indianred;
+    padding-left:10px;
+    padding-right:10px;
+    justify-content: center;
+    min-width: 90px;
+    margin: 0 20px ;
+}
+
+div.content {
+    display: flex;
+    padding: 20px;
+}
+
+div.container {
+    font-family: Another-typewriter;
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    background-image: url('bg_paper.jpg');
+    background-repeat: repeat;
+    background-size: 70%;
+    outline: 4px dotted darkslategrey;
+    outline-offset: -15px;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.4);
+    margin-bottom: 150px;
+}
+
+div.container.admin {
+    width:1600px;
+    min-height:700px;
+}
+
+div.planning {
+    max-width: 60%;
+    align-self: center;
+}
+
+div.location {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    flex: 1 1 auto;
+    padding: 20px;
+    margin: 20px 0;
+    border: dotted lightgrey;
+    background-color: rgba(20,20,20 , 0.05);
+    border-radius:20px;
+}
+
+div.info {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: start;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 30px;
+    margin: 0px;
+}
+
+div.form-container {
+    display:flex;
+    margin-top: 40px;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    width: 500px;
+    align-self: center;
+    border: dotted lightgrey;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 50px;
+    padding-right: 50px;
+    background-color: rgba(20,20,20 , 0.05);
+    border-radius:20px;
+    font-size:0.8em;
+}
+
+div.message {
+    display: flex;
+    font-size: 1.3em;
+    color: darkslategrey;
+    flex-direction: column;
+    text-align: center;
+    flex-wrap: wrap;
+    flex: 1 1 auto;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+div.stats {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: dotted lightgrey;
+    background-color: rgba(20,20,20 , 0.05);
+    border-radius:20px;
+    padding: 0 20px 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+span.error {
+    margin-top: 5px;
+    color: white;
+    background-color: indianred;
+}
+
+span.ok {
+    margin-top: 5px;
+    color: darkslategray;
+    background-color:rgba(91, 245, 168, 0.4)
+}
+
+
+/* Media Queries */
+@media screen and (max-width: 1024px) {
+	div.container {
+		width: 90%;
+        margin-top: 200px;
+        margin-bottom: 200px;
+    }
+
+    div.header {
+        min-height: 400px;
+    }
+
+    div.footer {
+        min-height: 230px;
+    }
+
+    body {
+        background-size: 400%;
+    }
+}

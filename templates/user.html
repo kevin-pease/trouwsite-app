@@ -1,0 +1,53 @@
+{% extends "layout_admin.html" %}
+{% block body %}
+
+<div class="message">
+    <h3>
+        Wijzig details <a href="/admin">(terug...)</a>
+    </h3>
+    <div class="form-container">
+        <h3>Voorkeuren en gegevens:</h3>
+        <form action="/user/{{id}}" method="post">
+            {{ preferencesform.csrf_token }}
+              {% with messages = get_flashed_messages(with_categories=true) %}
+              {% if messages %}
+                {% for category, message in messages %}
+                    <span class="{{category}}">
+                    {{ message }}
+                </span>
+                {% endfor %}
+                {% endif %}
+                {% endwith %}
+            <label class="form vert">
+                {{ preferencesform.name.label }}
+                {{ preferencesform.name}}
+            </label>
+            <label class="form vert">
+                {{ preferencesform.email.label }}
+                {{ preferencesform.email}}
+            </label>
+            <label class="form vert">
+                {{ preferencesform.password.label }}
+                {{ preferencesform.password}}
+            </label>
+            <label class="form vert">
+                {{ preferencesform.password_check.label }}
+                {{ preferencesform.password_check}}
+            </label>
+            <label class="form horiz">
+                {{ preferencesform.parking}}
+                {{ preferencesform.parking.label }}
+            </label>
+            <label class="form vert">
+                {{ preferencesform.diet_wishes.label }}
+                {{ preferencesform.diet_wishes}}
+            </label>
+            <label class="form vert">
+                {{ preferencesform.comments.label }}
+                {{ preferencesform.comments}}
+            </label>
+            {{ preferencesform.submit}}
+        </form>
+    </div>
+</div>
+{% endblock %}

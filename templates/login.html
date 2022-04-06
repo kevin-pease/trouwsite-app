@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<div class="message">
+    <h1>
+        Welkom!
+    </h1>
+    <p>
+        Welkom op onze website. Log in door je email-adres en wachtwoord in te vullen. Ben je hier voor het eerst? Vul dan de code die je bij de uitnodiging hebt ontvangen in. Je kunt daarna je email-adres invullen en je wachtwoord kiezen.
+    </p>
+    <div class="form-container">
+      <h3>Inloggen:</h3>
+      <form action="/login" method="post">
+          {{ loginform.csrf_token }}
+          {% with messages = get_flashed_messages(category_filter=["login"]) %}
+          {% if messages %}
+            {% for message in messages %}
+              <span class="error">{{ message }}</span>
+            {% endfor %}
+          {% endif %}
+          {% endwith %}
+          <label class="form vert">
+            {{ loginform.email.label }}
+            {{ loginform.email}}
+          </label>
+          <label class="form vert">
+            {{ loginform.password.label }}
+            {{ loginform.password}}
+          </label>
+            {{ loginform.submit}}
+      </form>
+    </div>
+    <div class='form-container'>
+      <h3>Of vul de code in:</h3>
+      <form action="/login " method="post">
+        {{ codeform.csrf_token }}
+        {% with messages = get_flashed_messages(category_filter=["code"]) %}
+        {% if messages %}
+          {% for message in messages %}
+            <span class="error">{{ message }}</span>
+          {% endfor %}
+        {% endif %}
+        {% endwith %}
+        <label class="form vert">
+          {{ codeform.code.label }}
+          {{ codeform.code }}
+        </label>
+          {{ codeform.submit}}
+      </form>
+    </div>
+</div>
+{% endblock %}

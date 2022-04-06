@@ -1,0 +1,11 @@
+/__pycache__/*
+/__pycache__/
+
+/flask_session/*
+/flask_session/
+
+/.venv/*
+/.venv/
+
+poetry.lock
+credentials.txt

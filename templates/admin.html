@@ -1,0 +1,89 @@
+{% extends "layout_admin.html" %}
+{% block body %}
+
+<div class="message">
+    <h3>
+        Beheerpagina <a href="/">(terug...)</a>
+    </h3>
+    <div class="stats">
+        <h4>Statistieken:</h4>
+        <span>Aantal accounts voor daggasten: {{ stats.number_day_guests }} </span>
+        <span>Aantal accounts voor avondgasten: {{ stats.number_evening_guests }} </span>
+        <span>Totaal accounts voor alle gasten: {{ stats.number_total_guests }} </span>
+        <span>Aantal parkeerplekken: {{ stats.amount_parking }} </span>
+    </div>
+    <div class="stats">
+        <h4>Dieetwensen:</h4>
+        {% for item in stats.diet_wishes %}
+            <span>
+                <a class="stats" href="/user/{{item.id}}">{{ item.name }}:</a>
+                '{{ item.diet_wishes }}'
+            </span> 
+        {% endfor %}
+    </div>
+    <div class="stats">
+        <h4>Opmerkingen:</h4>
+        {% for item in stats.comments %}
+            <span>
+                <a class="stats" href="/user/{{item.id}}">{{ item.name }}:</a>
+                '{{ item.comments }}'
+            </span> 
+        {% endfor %}
+    </div>
+    <div class="stats">
+        <h4>Alle daggasten:</h4>
+        <table >
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Naam</th>
+                <th>Emailadres</th>
+                <th>Parkeren</th>
+                <th>Dieetwensen</th>
+                <th>Opmerkingen</th>
+              </tr>
+            </thead>
+            <tbody>
+            {% for guest in stats.day_guests %}
+                <tr>
+                    <td>{{guest.id}}</td>
+                    <td><a class="stats" href="/user/{{guest.id}}">{{ guest.name }}</a></td>
+                    <td>{{guest.email}}</td>
+                    <td class="parking">{% if guest.parking == true: %}☑{% else: %}☐{% endif %}</td>
+                    <td>{% if guest.diet_wishes %}{{guest.diet_wishes[:16]}}{% if guest.diet_wishes|length >16 %}...{% endif%}{% else %}-{% endif %}</td>
+                    <td>{% if guest.comments %}{{guest.comments[:16]}}{% if guest.comments|length >16 %}...{% endif%}{% else %}-{% endif %}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="stats">
+        <h4>Alle avondgasten:</h4>
+        <table >
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Naam</th>
+                <th>Emailadres</th>
+                <th>Parkeren</th>
+                <th>Dieetwensen</th>
+                <th>Opmerkingen</th>
+              </tr>
+            </thead>
+            <tbody>
+            {% for guest in stats.evening_guests %}
+                <tr>
+                    <td>{{guest.id}}</td>
+                    <td><a class="stats" href="/user/{{guest.id}}">{{ guest.name }}</a></td>
+                    <td>{{guest.email}}</td>
+                    <td class="parking">{% if guest.parking == true: %}☑{% else: %}☐{% endif %}</td>
+                    <td>{% if guest.diet_wishes %}{{guest.diet_wishes[:16]}}{% if guest.diet_wishes|length >16 %}...{% endif%}{% else %}-{% endif %}</td>
+                    <td>{% if guest.comments %}{{guest.comments[:16]}}{% if guest.comments|length >16 %}...{% endif%}{% else %}-{% endif %}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}
