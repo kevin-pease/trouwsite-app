@@ -1,0 +1,14 @@
+flask
+flask_session
+flask_sqlalchemy
+flask_mail
+dataclasses
+typing
+sqlalchemy
+mysqlclient
+pymysql
+bcrypt
+email_validator
+wtforms
+flask_wtf
+gunicorn 
