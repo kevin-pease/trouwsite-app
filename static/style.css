@@ -17,6 +17,8 @@ body {
     background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("bg.png");
     background-repeat: repeat;
     background-color: rgba(91, 245, 168, 0.2);
+    width: 100%;
+    flex: 1 0 auto;
 }
 
 nav {
@@ -208,6 +210,7 @@ label.form.vert {
 
 label.form.vert.submit {
     justify-content: flex-end;
+    align-items: flex-end;
 }
 
 div.navbutton {
@@ -331,22 +334,86 @@ span.ok {
 
 
 /* Media Queries */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1100px) {
 	div.container {
 		width: 90%;
-        margin-top: 200px;
-        margin-bottom: 200px;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    p {
+        width: 100%;
     }
 
     div.header {
-        min-height: 400px;
+        width: 100%;
+        background-size: contain;
+        flex: 0 1 auto;
+        min-height: 200px;
+        margin-bottom: 0px;
     }
 
     div.footer {
+		width: 100%;
         min-height: 230px;
+        background-size: contain;
+        flex: 0 1 auto;
+        min-height: 200px;
+        margin-top: 0px;
+    }
+
+    div.message {
+        width: 100%;
+        flex: 0 1 auto;
+        padding: 0;
+        margin: 0;
+    }
+
+    div.greeting {
+        width: 100%;
+        flex: 0 1 auto;
+    }
+
+    div.form-container {
+        width: 90%;
+        flex: 0 1 auto;
+        padding-left: 10px;
+        padding-right: 10px;
     }
 
     body {
+        margin: 0;
         background-size: 400%;
+        width: 100%;
+        flex: 1 1 auto;
+    }
+
+    input {
+        width: 95%;
+    }
+
+    input[type=text] {
+        width: 95%;
+    }
+
+    div.location {
+        flex-direction: column;
+    }
+
+    nav {
+        font-size: 0.7em;
+    }
+    
+    div.navbutton {
+        min-width: 20px;
+        flex-wrap: nowrap;
+        margin-right: 5px;
+        margin-left: 5px;
+    }
+    
+    div.greeting {
+        flex-direction: column;
     }
 }
