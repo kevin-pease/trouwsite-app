@@ -125,6 +125,10 @@ iframe {
     border: dotted lightgray;
 }
 
+img.map {
+    width: 100%;
+    height: 100%;
+}
 
 /* Table */
 table {
@@ -184,6 +188,11 @@ div.bottom {
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 320px;
+    flex: 1 0 auto;
+}
+
+div.img-box {
+    display: flex;
     flex: 1 0 auto;
 }
 
