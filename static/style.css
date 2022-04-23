@@ -130,6 +130,13 @@ img.map {
     height: 100%;
 }
 
+img.photo {
+    border: dotted grey;
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+}
+
 /* Table */
 table {
     width: 100%;
@@ -194,6 +201,12 @@ div.bottom {
 div.img-box {
     display: flex;
     flex: 1 0 auto;
+}
+
+div.img-box.photo {
+    margin-top: 40px;
+    width: 50%;
+    align-self: center;
 }
 
 label.form {
@@ -386,6 +399,8 @@ span.remark {
     }
 
     div.greeting {
+        display: flex;
+        flex-direction: column;
         width: 100%;
         flex: 0 1 auto;
     }
