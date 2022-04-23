@@ -154,6 +154,18 @@ def preferences():
 
     return render_template('preferences.html', preferencesform=preferencesform, name=user.name, admin=session["admin"])
 
+# Route for showing faq page
+@app.route("/faq", methods=["GET", "POST"])
+@limiter.limit("30 per minute")
+def faq():
+    if not session.get("user_id"):
+        return redirect("/login")
+    if not session.get("admin"):
+        session["admin"] = False
+
+    user = Users.query.filter_by(id=session.get("user_id")).one()
+    return render_template('faq.html', dayguest=user.is_dayguest, name=user.name, admin=session["admin"])
+
 
 # Route for showing location info
 @app.route("/location", methods=["GET", "POST"])

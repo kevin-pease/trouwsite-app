@@ -121,7 +121,7 @@ form {
 
 iframe {
     width: 300px;
-    height: 250px;
+    height: 350px;
     border: dotted lightgray;
 }
 
@@ -330,6 +330,11 @@ span.ok {
     margin-top: 5px;
     color: darkslategray;
     background-color:rgba(91, 245, 168, 0.4)
+}
+
+span.remark {
+    margin-top: 15px;
+    font-size: 0.8em;
 }
 
 
