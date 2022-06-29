@@ -44,6 +44,7 @@ h4 {
     font-size: 1.2em;
 }
 
+
 a {
     font-size: 0.7em;
     color: darkgrey;
@@ -201,6 +202,7 @@ div.bottom {
 div.img-box {
     display: flex;
     flex: 1 0 auto;
+    margin-top: 30px;
 }
 
 div.img-box.photo {
@@ -289,6 +291,10 @@ div.location {
     border-radius:20px;
 }
 
+div.location.vert {
+    flex-direction: column;
+}
+
 div.info {
     display: flex;
     flex-direction: column;
@@ -298,6 +304,31 @@ div.info {
     align-items: flex-start;
     padding-left: 30px;
     margin: 0px;
+}
+
+div.info.row {
+    flex-direction: row;
+    justify-content:center;
+}
+
+div.info.border {
+    border: dotted lightgrey;
+    background-color: rgba(20,20,20 , 0.05);
+    border-radius:20px;
+    padding-bottom: 30px;
+    padding-right: 30px;
+    font-size: 0.8em;
+}
+
+div.blogtext {
+    display: flex;
+    flex-direction: row;
+    flex: 1 0 auto;
+    flex-wrap: wrap;
+}
+
+span.italic {
+    font-style: italic;
 }
 
 div.form-container {
