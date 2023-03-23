@@ -5,8 +5,6 @@ from flask_mail import Mail, Message
 from dataclasses import dataclass
 from typing import Any
 from sqlalchemy import func
-from flask_limiter import Limiter
-from flask_limiter.util import get_remote_address
 import MySQLdb
 import pymysql
 import sqlalchemy
@@ -33,7 +31,7 @@ except Exception as error:
 
 # App and database parameters
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = f"mysql://root:{credentials['mysql']}@192.168.1.219/trouwsitedb"
+app.config['SQLALCHEMY_DATABASE_URI'] = f"mysql://root:{credentials['mysql']}@192.168.1.219/trouwsitedb" # change ip to match database
 app.config["SECRET_KEY"] = credentials['secret_key']
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['TEMPLATES_AUTO_RELOAD'] = True
@@ -42,10 +40,6 @@ app.jinja_env.trim_blocks = True
 app.jinja_env.lstrip_blocks = True
 db = SQLAlchemy(app)
 Session(app)
-limiter = Limiter(
-    app,
-    key_func=get_remote_address
-)
 
 
 @dataclass
@@ -106,7 +100,6 @@ def change_password(db_user, form):
 
 # Default route
 @app.route("/", methods=["GET", "POST"])
-# @limiter.limit("30 per minute")
 def index():
     if not session.get("user_id"):
         return redirect("/login")
@@ -120,7 +113,6 @@ def index():
 
 # Route for changing preferences
 @app.route("/preferences", methods=["GET", "POST"])
-@limiter.limit("30 per minute")
 def preferences():
     if not session.get("user_id"):
         return redirect("/login")
@@ -156,7 +148,6 @@ def preferences():
 
 # Route for showing faq page
 @app.route("/faq", methods=["GET", "POST"])
-@limiter.limit("30 per minute")
 def faq():
     if not session.get("user_id"):
         return redirect("/login")
@@ -169,7 +160,6 @@ def faq():
 
 # Route for showing location info
 @app.route("/location", methods=["GET", "POST"])
-@limiter.limit("30 per minute")
 def location():
     if not session.get("user_id"):
         return redirect("/login")
@@ -182,7 +172,6 @@ def location():
 
 # Route for showing planning info
 @app.route("/planning", methods=["GET", "POST"])
-@limiter.limit("30 per minute")
 def planning():
     if not session.get("user_id"):
         return redirect("/login")
@@ -195,7 +184,6 @@ def planning():
 
 # Route for new users to register
 @app.route("/register", methods=["GET", "POST"])
-@limiter.limit("30 per minute")
 def register():
     if session["is_dayguest"] != None:
         registerform = forms.RegisterForm()
@@ -253,7 +241,6 @@ def register():
 
 # Route for existing users to log in, or for new users to be redirected to the `register` route
 @app.route("/login", methods=["GET", "POST"])
-@limiter.limit("30 per minute")
 def login():
     if session.get("user_id"):
         return redirect("/")
@@ -303,7 +290,6 @@ def login():
 
 # Route for admins
 @app.route("/admin")
-@limiter.limit("30 per minute")
 def admin():
     if not session.get("user_id"):
         return redirect("/login")
@@ -330,7 +316,6 @@ def admin():
 
 # Route for admins, to change user data
 @app.route("/user/<id>", methods=["GET", "POST"])
-@limiter.limit("30 per minute")
 def user(id):
     if not session.get("user_id"):
         return redirect("/login")
@@ -368,7 +353,6 @@ def user(id):
 
 # Route for logouts
 @app.route("/logout")
-@limiter.limit("30 per minute")
 def logout():
     session.clear()
     return redirect("/login")
