@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<div class="message">
+  <h1>
+    {% if dayguest %}
+      Locaties
+    {% else %}
+      Locatie
+    {% endif %}
+  </h1>
+  {% if dayguest %}
+    <div class="location">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d664.2071451923382!2d5.0685350410649805!3d52.364572029040666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c60e249faf777d%3A0x9ac64a3fe5f76480!2sPampus!5e0!3m2!1snl!2snl!4v1679569107278!5m2!1snl!2snl" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <div class="info">
+        <h4>Locatie 1</h4>
+        Hoofdstraat 12<br>
+        1234 AB<br>
+        Nairobi<br>
+        <a class="stats" href="http://www.google.nl">Website Locatie 1</a>
+        <span class="remark">Let op, hier kun je niet parkeren. Parkeergarages binnen loopafstand zijn (...).</span>
+      </div>
+    </div>
+    <div class="location">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d664.2071451923382!2d5.0685350410649805!3d52.364572029040666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c60e249faf777d%3A0x9ac64a3fe5f76480!2sPampus!5e0!3m2!1snl!2snl!4v1679569107278!5m2!1snl!2snl" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <div class="info">
+        <h4>Locatie 2</h4>
+        Hoofdstraat 12<br>
+        1234 AB<br>
+        Nairobi<br>
+        <a class="stats" href="http://www.google.nl">Website</a>
+      </div>
+    </div>
+    <div class="location">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d664.2071451923382!2d5.0685350410649805!3d52.364572029040666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c60e249faf777d%3A0x9ac64a3fe5f76480!2sPampus!5e0!3m2!1snl!2snl!4v1679569107278!5m2!1snl!2snl" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <div class="info">
+        <h4>Locatie 3 (diner en avondfeest)</h4>
+        Hoofdstraat 12<br>
+        1234 AB<br>
+        Nairobi<br>
+      </div>
+    </div>
+  {% else %}
+    <div class="location">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d664.2071451923382!2d5.0685350410649805!3d52.364572029040666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c60e249faf777d%3A0x9ac64a3fe5f76480!2sPampus!5e0!3m2!1snl!2snl!4v1679569107278!5m2!1snl!2snl" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <div class="info">
+        <h4>Locatie 3</h4>
+        Hoofdstraat 12<br>
+        1234 AB<br>
+        Nairobi<br>
+      </div>
+    </div>
+  {% endif %}
+  <div class="location vert">
+    Graag eerst parkeren in het rood gemarkeerde gebied. Dit is bij (...). Mochten deze plekken allemaal bezet zijn, dan in het gras parkeren in het blauwe gebied, of elders in de buurt. Graag niet bij de feestlocatie zelf parkeren ivm bereikbaarheid cateringdiensten!
+    <div class="img-box">
+      <img class="map" src="/static/parking_map.jpg" alt="Parking map">
+    </div>
+  </div>
+</div>
+{% endblock %}

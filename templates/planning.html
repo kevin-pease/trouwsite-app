@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<div class="message">
+  <h1>
+    Planning
+  </h1>
+  <div class="planning">
+    <table class="planning">
+      <tbody>
+        {% if dayguest == True: %}
+        <tr>
+          <td>12.30</td>
+          <td>Verzamelen bij (...)</td>
+        </tr>
+        <tr>
+          <td>13.00</td>
+          <td>Begin ceremonie</td>
+        </tr>
+        <tr>
+          <td>14.00</td>
+          <td>Receptie (...)</td>
+        </tr>
+        <tr>
+          <td>16.00</td>
+          <td>Vertrek naar (...)</td>
+        </tr>
+        <tr>
+          <td>17.00</td>
+          <td>Fotoshoot daggasten
+          </td>
+        </tr>
+        <tr>
+          <td>18.00</td>
+          <td>Diner</td>
+        </tr>
+        {% endif %}
+        <tr>
+          <td>20:30</td>
+          <td>Start avondfeest</td>
+        </tr>
+        <tr>
+          <td>00.30</td>
+          <td>Einde avondfeest</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+{% endblock %}

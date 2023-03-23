@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<div class="message">
+  <div class="greeting">
+    <h1>
+      Welkom {{name}}!
+    </h1>
+    <a href="/logout" class='logout'>(Uitloggen)</a>    
+  </div>
+  <div class="info border">
+    <h4>Update 29-06-22</h4>
+    <div class="blogtext">
+      Het is bijna zover, de dag die je wist dat zou komen komt snel dichterbij! Daarom wat kleine updates op deze website. Check vooral de parkeerinstructies als je met de auto komt. Verder staat er op de faq-pagina een code voor de Snappshot-app, waarmee je op de dag zelf foto's kan nemen en delen! Houd deze website in de gaten voor meer (eventuele) last-minute updates.
+    </div>
+  </div>
+    <p>
+        Welkom op onze trouwsite! Op deze website vind je actuele informatie over onze trouwdag. Ook kun je je persoonlijke voorkeuren en wensen aanpassen zodat wij daar rekening mee kunnen houden. Gebruik de tabbladen hierboven om door de site te navigeren.
+    </p>
+    <p>Bij vragen <i>over de website</i> kun je contact opnemen met Kevin. Bij vragen <i>over de bruiloft zelf</i> kun je een van de ceremoniemeesters vragen:<br>
+      (...) of (...).
+    </p>
+    <p>
+        We hebben er veel zin in, graag tot (...)!<br>
+        Lieve groet, Kevin en Myrthe
+    </p>
+    <div class="img-box photo">
+      <img class="photo" src="/static/bruidspaar.jpg" alt="bruidspaar">
+    </div>
+
+</div>
+
+{% endblock %}
